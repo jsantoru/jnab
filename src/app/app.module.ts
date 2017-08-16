@@ -1,8 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { TickerComponent } from './ticker/ticker.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {MdInputModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {AppComponent} from './app.component';
+import {TickerComponent} from './ticker/ticker.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,9 @@ import { TickerComponent } from './ticker/ticker.component';
     TickerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MdInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
