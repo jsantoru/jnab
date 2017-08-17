@@ -7,13 +7,13 @@
   <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
   <md-card-content>
     <md-input-container>
-      <input mdInput placeholder="Ticker" value="AAPL">
+      <input mdInput [(ngModel)]="ticker" placeholder="Ticker" value="" (focusout)="lookupTicker()">
     </md-input-container>
     <md-input-container>
-      <input mdInput readonly placeholder="Value" value="$160.45">
+      <input mdInput [(ngModel)]="value" readonly placeholder="Value" value="${{value}}">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Dividend" value="3%">
+      <input mdInput placeholder="Dividend" value="{{dividend}}%">
     </md-input-container>
   </md-card-content>
   <!--<md-card-actions>

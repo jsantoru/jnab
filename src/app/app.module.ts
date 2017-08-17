@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MdButtonModule, MdInputModule, MdCardModule, MdSidenavModule} from '@angular/material';
+
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {TickerComponent} from './ticker/ticker.component';
@@ -25,7 +29,9 @@ import { InputComponent } from './input/input.component';
     MdInputModule,
     MdCardModule,
     MdButtonModule,
-    MdSidenavModule
+    MdSidenavModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
