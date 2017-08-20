@@ -27,7 +27,8 @@ export class TickerComponent implements OnInit {
       // currently the response data is JUST the value
       (data) => {
         console.log("RESPONSE:", data);
-        this.value = JSON.stringify(data)},
+
+        this.value = data['price']},
       (err) => {
         console.log("ERROR:", err);
       }
