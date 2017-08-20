@@ -10,14 +10,19 @@ export class TickerComponent implements OnInit {
 
   ticker: string;
   value: string;
-  dividend: string = "2.9";
+  dividend: string;
 
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
   }
 
-  lookupTicker() {
+  lookupCompanyInfo() {
+    this.lookupPrice();
+    this.lookupDividend();
+  }
+
+  lookupPrice() {
     console.log("looking up ticker:", this.ticker);
 
     var url: string = 'http://localhost:8080/stock/price?ticker=' + this.ticker;
@@ -36,6 +41,22 @@ export class TickerComponent implements OnInit {
 
   }
 
+  lookupDividend() {
+    console.log("looking up dividend:", this.ticker);
 
+    var url: string = 'http://localhost:8080/stock/dividend?ticker=' + this.ticker;
 
+    // get the current value of the ticker
+    this.httpClient.get(url).subscribe(
+      // currently the response data is JUST the value
+      (data) => {
+        console.log("RESPONSE:", data);
+
+        this.dividend = data['dividendPercent']},
+      (err) => {
+        console.log("ERROR:", err);
+      }
+    );
+
+  }
 }
