@@ -25,7 +25,7 @@ export class TickerComponent implements OnInit {
   lookupPrice() {
     console.log("looking up ticker:", this.ticker);
 
-    var url: string = 'http://localhost:8080/stock/price?ticker=' + this.ticker;
+    var url: string = 'http://localhost:8080/stock/price?ticker=' + this.ticker + "&apikey=demo";
 
     // get the current value of the ticker
     this.httpClient.get(url).subscribe(
@@ -44,7 +44,7 @@ export class TickerComponent implements OnInit {
   lookupDividend() {
     console.log("looking up dividend:", this.ticker);
 
-    var url: string = 'http://localhost:8080/stock/dividend?ticker=' + this.ticker;
+    var url: string = 'http://localhost:8080/stock/dividend?ticker=' + this.ticker + "&apikey=demo";
 
     // get the current value of the ticker
     this.httpClient.get(url).subscribe(

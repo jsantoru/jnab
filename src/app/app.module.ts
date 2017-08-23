@@ -14,6 +14,7 @@ import {TickerComponent} from './ticker/ticker.component';
 import { EsppComponent } from './espp/espp.component';
 import { PersonalComponent } from './personal/personal.component';
 import { InputComponent } from './input/input.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InputComponent } from './input/input.component';
     TickerComponent,
     EsppComponent,
     PersonalComponent,
-    InputComponent
+    InputComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
