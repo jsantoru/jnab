@@ -2,11 +2,13 @@
   <md-card-header>
     <div md-card-avatar class="example-header-image"><i class="material-icons">star_border</i></div>
     <md-card-title>ESPP Info</md-card-title>
-    <!--<md-card-subtitle>Dog Breed</md-card-subtitle>-->
+    <!--<md-card-subtitle>Some ESPP text</md-card-subtitle>-->
   </md-card-header>
   <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
   <md-card-content>
     <md-input-container>
+      <!-- TODO: how to do two-way bind and still have %, $, etc? -->
+      <!-- sample two-way binding: <input mdInput [(ngModel)]="companyInputEntity.ticker" placeholder="Ticker" value="" (focusout)="lookupCompanyInfo()"> -->
       <input mdInput placeholder="Discount" value="{{esppInputEntity?.discount}}%">
     </md-input-container>
     <md-input-container>
