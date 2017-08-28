@@ -7,16 +7,41 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  @Output() lookupPriceEvent = new EventEmitter<string>();
+  @Output() calculateEvent = new EventEmitter<InputEntity>();
+
+  inputEntity: InputEntity = new InputEntity();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  passOnStockPrice(stockPrice) {
+  setStockPrice(stockPrice) {
     console.log("STOCK PRICE:", stockPrice);
 
-    this.lookupPriceEvent.emit(stockPrice);
+    // inputEntity
+    this.inputEntity.value = stockPrice;
   }
+
+  onClickCalculate() {
+    console.log("on click calculate");
+    this.calculateEvent.emit(this.inputEntity);
+  }
+}
+
+export class InputEntity {
+  // company info
+  ticker: string;
+  value: string;
+  dividend: string;
+
+  // espp info
+  discount: string;
+  holdingPeriodMonths: string;
+  fees: string;
+
+  // personal info
+  salary: string;
+  contributionPercent: string;
+  marginalTaxBracket: string;
 }

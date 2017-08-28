@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {InputEntity} from "./input/input.component";
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ESPP Calculator';
 
-  stockPrice: string;
+  inputEntity: InputEntity;
 
-  receiveStockPrice(stockPrice) {
-    console.log("APP COMPONENT STOCK PRICE:", stockPrice);
-    this.stockPrice = stockPrice;
+  calculate(inputEntity) {
+    console.log("INPUT ENTITY:", JSON.stringify(inputEntity));
+    this.inputEntity = inputEntity;
   }
 }

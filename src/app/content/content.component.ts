@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {InputEntity} from "../input/input.component";
 
 @Component({
   selector: 'app-content',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  @Input() stockPrice: string;
+  @Input() inputEntity: InputEntity;
 
   constructor() { }
 

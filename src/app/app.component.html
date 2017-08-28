@@ -5,8 +5,8 @@
   </h1>
 </div>
 <app-input
-  (lookupPriceEvent)="receiveStockPrice($event)"
+  (calculateEvent)="calculate($event)"
 ></app-input>
 <app-content
-  [stockPrice]="stockPrice"
+  [inputEntity]="inputEntity"
 ></app-content>
