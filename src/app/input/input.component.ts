@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
+  @Output() lookupPriceEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  passOnStockPrice(stockPrice) {
+    console.log("STOCK PRICE:", stockPrice);
+
+    this.lookupPriceEvent.emit(stockPrice);
+  }
 }

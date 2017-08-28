@@ -1,6 +1,8 @@
 <md-sidenav-container class="example-container" fullscreen>
   <md-sidenav #sidenav class="example-sidenav" opened="true">
-    <app-ticker></app-ticker>
+    <app-ticker
+      (lookupPriceEvent)="passOnStockPrice($event)">
+    </app-ticker>
     <app-espp></app-espp>
     <app-personal></app-personal>
     <button md-button>CALCULATE</button>

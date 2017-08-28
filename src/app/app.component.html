@@ -4,5 +4,9 @@
     {{title}}
   </h1>
 </div>
-<app-input></app-input>
-<app-content></app-content>
+<app-input
+  (lookupPriceEvent)="receiveStockPrice($event)"
+></app-input>
+<app-content
+  [stockPrice]="stockPrice"
+></app-content>

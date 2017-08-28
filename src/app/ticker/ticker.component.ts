@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -11,6 +11,8 @@ export class TickerComponent implements OnInit {
   ticker: string;
   value: string;
   dividend: string;
+
+  @Output() lookupPriceEvent = new EventEmitter<string>();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -33,7 +35,13 @@ export class TickerComponent implements OnInit {
       (data) => {
         console.log("RESPONSE:", data);
 
-        this.value = data['price']},
+        this.value = data['price'];
+
+        // fire the event now that we have a new value
+        this.lookupPriceEvent.emit(this.value);
+
+      },
+
       (err) => {
         console.log("ERROR:", err);
       }

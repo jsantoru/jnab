@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ESPP Calculator';
+
+  stockPrice: string;
+
+  receiveStockPrice(stockPrice) {
+    console.log("APP COMPONENT STOCK PRICE:", stockPrice);
+    this.stockPrice = stockPrice;
+  }
 }
