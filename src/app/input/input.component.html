@@ -6,7 +6,9 @@
     <app-espp
       (esppInputEvent)="onEsppInputEvent($event)">
     </app-espp>
-    <app-personal></app-personal>
+    <app-personal
+      (personalInputEvent)="onPersonalInputEvent($event)">
+    </app-personal>
     <button md-button (click)="onClickCalculate()">CALCULATE</button>
   </md-sidenav>
 

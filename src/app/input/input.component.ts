@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {EsppInputEntity} from "../espp/espp.component";
+import {PersonalInputEntity} from "../personal/personal.component";
 
 @Component({
   selector: 'app-input',
@@ -33,6 +34,11 @@ export class InputComponent implements OnInit {
     this.inputEntity.esppInputEntity = esppInputEntity;
     console.log("On espp input event", esppInputEntity);
   }
+
+  onPersonalInputEvent(personalInputEntity) {
+    this.inputEntity.personalInputEntity = personalInputEntity;
+    console.log("on personal input event", personalInputEntity);
+  }
 }
 
 export class InputEntity {
@@ -45,7 +51,5 @@ export class InputEntity {
   esppInputEntity: EsppInputEntity;
 
   // personal info
-  salary: string;
-  contributionPercent: string;
-  marginalTaxBracket: string;
+  personalInputEntity: PersonalInputEntity;
 }

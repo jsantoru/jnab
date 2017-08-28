@@ -7,13 +7,13 @@
   <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
   <md-card-content>
     <md-input-container>
-      <input mdInput placeholder="Salary" value="$100,000">
+      <input mdInput placeholder="Salary" value="${{personalInputEntity.salary}}">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Contribution %" value="10%">
+      <input mdInput placeholder="Contribution %" value="{{personalInputEntity.contributionPercent}}%">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Marginal Tax Bracket" value="25%">
+      <input mdInput placeholder="Marginal Tax Bracket" value="{{personalInputEntity.marginalTaxBracket}}%">
     </md-input-container>
   </md-card-content>
   <!--<md-card-actions>
