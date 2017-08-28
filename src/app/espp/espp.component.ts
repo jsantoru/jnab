@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-espp',
@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EsppComponent implements OnInit {
 
-  constructor() { }
+  esppInputEntity: EsppInputEntity = new EsppInputEntity();
 
-  ngOnInit() {
+  @Output() esppInputEvent = new EventEmitter<EsppInputEntity>();
+
+  constructor() {
+    // set defaults
+    this.esppInputEntity.discount = "15";
+    this.esppInputEntity.holdingPeriodMonths = "3";
+    this.esppInputEntity.fees = "35";
   }
 
+  ngOnInit() {
+    // send out what the current espp values are
+    this.esppInputEvent.emit(this.esppInputEntity);
+  }
+
+}
+
+export class EsppInputEntity {
+  discount: string;
+  holdingPeriodMonths: string;
+  fees: string;
 }

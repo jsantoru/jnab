@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {EsppInputEntity} from "../espp/espp.component";
 
 @Component({
   selector: 'app-input',
@@ -27,6 +28,11 @@ export class InputComponent implements OnInit {
     console.log("on click calculate");
     this.calculateEvent.emit(this.inputEntity);
   }
+
+  onEsppInputEvent(esppInputEntity) {
+    this.inputEntity.esppInputEntity = esppInputEntity;
+    console.log("On espp input event", esppInputEntity);
+  }
 }
 
 export class InputEntity {
@@ -36,9 +42,7 @@ export class InputEntity {
   dividend: string;
 
   // espp info
-  discount: string;
-  holdingPeriodMonths: string;
-  fees: string;
+  esppInputEntity: EsppInputEntity;
 
   // personal info
   salary: string;

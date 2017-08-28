@@ -3,7 +3,9 @@
     <app-ticker
       (lookupPriceEvent)="setStockPrice($event)">
     </app-ticker>
-    <app-espp></app-espp>
+    <app-espp
+      (esppInputEvent)="onEsppInputEvent($event)">
+    </app-espp>
     <app-personal></app-personal>
     <button md-button (click)="onClickCalculate()">CALCULATE</button>
   </md-sidenav>

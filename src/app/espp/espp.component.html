@@ -7,13 +7,13 @@
   <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
   <md-card-content>
     <md-input-container>
-      <input mdInput placeholder="Discount" value="15%">
+      <input mdInput placeholder="Discount" value="{{esppInputEntity?.discount}}%">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Holding Period (months)" value="3">
+      <input mdInput placeholder="Holding Period (months)" value="{{esppInputEntity?.holdingPeriodMonths}}">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Fees" value="$35">
+      <input mdInput placeholder="Fees" value="${{esppInputEntity?.fees}}">
     </md-input-container>
   </md-card-content>
   <!--<md-card-actions>
