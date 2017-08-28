@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {EsppInputEntity} from "../espp/espp.component";
 import {PersonalInputEntity} from "../personal/personal.component";
+import {CompanyInputEntity} from "../ticker/ticker.component";
 
 @Component({
   selector: 'app-input',
@@ -18,11 +19,14 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
-  setStockPrice(stockPrice) {
+  onLookupStockPriceEvent(stockPrice) {
     console.log("STOCK PRICE:", stockPrice);
+    this.inputEntity.companyInputEntity.value = stockPrice;
+  }
 
-    // inputEntity
-    this.inputEntity.value = stockPrice;
+  onLookupDividendEvent(dividend) {
+    console.log("DIVIDEND:", dividend);
+    this.inputEntity.companyInputEntity.dividend = dividend;
   }
 
   onClickCalculate() {
@@ -42,14 +46,7 @@ export class InputComponent implements OnInit {
 }
 
 export class InputEntity {
-  // company info
-  ticker: string;
-  value: string;
-  dividend: string;
-
-  // espp info
-  esppInputEntity: EsppInputEntity;
-
-  // personal info
-  personalInputEntity: PersonalInputEntity;
+  companyInputEntity: CompanyInputEntity = new CompanyInputEntity();
+  esppInputEntity: EsppInputEntity = new EsppInputEntity();
+  personalInputEntity: PersonalInputEntity = new PersonalInputEntity();
 }

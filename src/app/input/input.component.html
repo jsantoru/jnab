@@ -1,7 +1,8 @@
 <md-sidenav-container class="example-container" fullscreen>
   <md-sidenav #sidenav class="example-sidenav" opened="true">
     <app-ticker
-      (lookupPriceEvent)="setStockPrice($event)">
+      (lookupPriceEvent)="onLookupStockPriceEvent($event)"
+      (lookupDividendEvent)="onLookupDividendEvent($event)">
     </app-ticker>
     <app-espp
       (esppInputEvent)="onEsppInputEvent($event)">

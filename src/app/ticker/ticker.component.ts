@@ -8,13 +8,13 @@ import {HttpClient} from "@angular/common/http";
 })
 export class TickerComponent implements OnInit {
 
-  ticker: string;
-  value: string;
-  dividend: string;
+  companyInputEntity: CompanyInputEntity = new CompanyInputEntity();
 
   @Output() lookupPriceEvent = new EventEmitter<string>();
+  @Output() lookupDividendEvent = new EventEmitter<string>();
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   ngOnInit() {
   }
@@ -25,9 +25,9 @@ export class TickerComponent implements OnInit {
   }
 
   lookupPrice() {
-    console.log("looking up ticker:", this.ticker);
+    console.log("looking up ticker:", this.companyInputEntity.ticker);
 
-    var url: string = 'http://localhost:8080/stock/price?ticker=' + this.ticker + "&apikey=demo";
+    var url: string = 'http://localhost:8080/stock/price?ticker=' + this.companyInputEntity.ticker + "&apikey=demo";
 
     // get the current value of the ticker
     this.httpClient.get(url).subscribe(
@@ -35,11 +35,10 @@ export class TickerComponent implements OnInit {
       (data) => {
         console.log("RESPONSE:", data);
 
-        this.value = data['price'];
+        this.companyInputEntity.value = data['price'];
 
         // fire the event now that we have a new value
-        this.lookupPriceEvent.emit(this.value);
-
+        this.lookupPriceEvent.emit(this.companyInputEntity.value);
       },
 
       (err) => {
@@ -50,9 +49,9 @@ export class TickerComponent implements OnInit {
   }
 
   lookupDividend() {
-    console.log("looking up dividend:", this.ticker);
+    console.log("looking up dividend:", this.companyInputEntity.ticker);
 
-    var url: string = 'http://localhost:8080/stock/dividend?ticker=' + this.ticker + "&apikey=demo";
+    var url: string = 'http://localhost:8080/stock/dividend?ticker=' + this.companyInputEntity.ticker + "&apikey=demo";
 
     // get the current value of the ticker
     this.httpClient.get(url).subscribe(
@@ -60,11 +59,21 @@ export class TickerComponent implements OnInit {
       (data) => {
         console.log("RESPONSE:", data);
 
-        this.dividend = data['dividendPercent']},
+        this.companyInputEntity.dividend = data['dividendPercent'];
+
+        this.lookupDividendEvent.emit(this.companyInputEntity.dividend)
+
+      },
       (err) => {
         console.log("ERROR:", err);
       }
     );
 
   }
+}
+
+export class CompanyInputEntity {
+  ticker: string;
+  value: string;
+  dividend: string;
 }
