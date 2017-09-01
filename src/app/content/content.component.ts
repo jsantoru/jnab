@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {InputEntity} from "../input/input.component";
+import {DerivedValues} from "../derived-value.service";
 
 @Component({
   selector: 'app-content',
@@ -9,6 +10,7 @@ import {InputEntity} from "../input/input.component";
 export class ContentComponent implements OnInit {
 
   _inputEntity: InputEntity;
+  @Input() derivedValues: DerivedValues;
 
   constructor() { }
 
