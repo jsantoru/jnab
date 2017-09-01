@@ -1,4 +1,7 @@
 # Jnab
+This app is running at: https://jsantoru.github.io/jnab/
+
+An ESPP calculator written in Angular4 with Material. Uses a node backend (still needs to be hosted).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
 
