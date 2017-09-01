@@ -1,9 +1,10 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-espp',
   templateUrl: './espp.component.html',
-  styleUrls: ['./espp.component.css']
+  styleUrls: ['./espp.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EsppComponent implements OnInit {
 
@@ -13,9 +14,9 @@ export class EsppComponent implements OnInit {
 
   constructor() {
     // set defaults
-    this.esppInputEntity.discount = "15";
-    this.esppInputEntity.holdingPeriodMonths = "3";
-    this.esppInputEntity.fees = "35";
+    this.esppInputEntity.discount = 15;
+    this.esppInputEntity.holdingPeriodMonths = 3;
+    this.esppInputEntity.fees = 35;
   }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class EsppComponent implements OnInit {
 }
 
 export class EsppInputEntity {
-  discount: string;
-  holdingPeriodMonths: string;
-  fees: string;
+  discount: number;
+  holdingPeriodMonths: number;
+  fees: number;
 }

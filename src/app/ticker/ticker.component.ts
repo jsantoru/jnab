@@ -1,17 +1,18 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-ticker',
   templateUrl: './ticker.component.html',
-  styleUrls: ['./ticker.component.css']
+  styleUrls: ['./ticker.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TickerComponent implements OnInit {
 
   companyInputEntity: CompanyInputEntity = new CompanyInputEntity();
 
-  @Output() lookupPriceEvent = new EventEmitter<string>();
-  @Output() lookupDividendEvent = new EventEmitter<string>();
+  @Output() lookupPriceEvent = new EventEmitter<number>();
+  @Output() lookupDividendEvent = new EventEmitter<number>();
 
   constructor(private httpClient: HttpClient) {
   }
@@ -26,6 +27,7 @@ export class TickerComponent implements OnInit {
 
   lookupPrice() {
     console.log("looking up ticker:", this.companyInputEntity.ticker);
+
 
     var url: string = 'http://localhost:8080/stock/price?ticker=' + this.companyInputEntity.ticker + "&apikey=demo";
 
@@ -74,6 +76,6 @@ export class TickerComponent implements OnInit {
 
 export class CompanyInputEntity {
   ticker: string;
-  value: string;
-  dividend: string;
+  value: number;
+  dividend: number;
 }

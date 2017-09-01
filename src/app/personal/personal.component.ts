@@ -1,9 +1,10 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.css']
+  styleUrls: ['./personal.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonalComponent implements OnInit {
 
@@ -12,9 +13,9 @@ export class PersonalComponent implements OnInit {
   @Output() personalInputEvent = new EventEmitter<PersonalInputEntity>();
 
   constructor() {
-    this.personalInputEntity.salary = "100,000";
-    this.personalInputEntity.contributionPercent = "10";
-    this.personalInputEntity.marginalTaxBracket = "25";
+    this.personalInputEntity.salary = 100000;
+    this.personalInputEntity.contributionPercent = 10;
+    this.personalInputEntity.marginalTaxBracket = 25;
   }
 
   ngOnInit() {
@@ -24,7 +25,7 @@ export class PersonalComponent implements OnInit {
 }
 
 export class PersonalInputEntity {
-  salary: string;
-  contributionPercent: string;
-  marginalTaxBracket: string;
+  salary: number;
+  contributionPercent: number;
+  marginalTaxBracket: number;
 }

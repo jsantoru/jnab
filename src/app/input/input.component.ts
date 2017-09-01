@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
 import {EsppInputEntity} from "../espp/espp.component";
 import {PersonalInputEntity} from "../personal/personal.component";
 import {CompanyInputEntity} from "../ticker/ticker.component";
@@ -6,7 +6,8 @@ import {CompanyInputEntity} from "../ticker/ticker.component";
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputComponent implements OnInit {
 
