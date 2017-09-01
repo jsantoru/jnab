@@ -15,6 +15,7 @@ import { EsppComponent } from './espp/espp.component';
 import { PersonalComponent } from './personal/personal.component';
 import { InputComponent } from './input/input.component';
 import { ContentComponent } from './content/content.component';
+import {DerivedValueService} from "./derived-value.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ContentComponent } from './content/content.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DerivedValueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
