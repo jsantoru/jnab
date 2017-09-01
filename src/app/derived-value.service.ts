@@ -60,35 +60,38 @@ export class DerivedValueService {
   }
 
   calculateDiscount(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    return derivedValues.regularPurchase - derivedValues.discountPurchase;
   }
 
   calculateTaxesOnDiscount(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    return derivedValues.discount * inputEntity.personalInputEntity.marginalTaxBracket/100;
   }
 
   calculateSharePriceAtSell(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    // TODO: make projected performance an input property under company info
+    let projectedPerformancePercent = 0;
+    return inputEntity.companyInputEntity.value + (inputEntity.companyInputEntity.value * projectedPerformancePercent/100);
   }
 
   calculateSellAmount(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    return derivedValues.sharePriceAtSell * derivedValues.numShares;
   }
 
   calculateEarningsOverRegularPurchase(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    return derivedValues.sellAmount - derivedValues.regularPurchase;
   }
 
   calculateTaxOnEarnings(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    return derivedValues.earningsOverRegularPurchase * inputEntity.personalInputEntity.marginalTaxBracket/100;
   }
 
   calculateDividendAmount(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    return (derivedValues.sellAmount * inputEntity.companyInputEntity.dividend/100) /
+      (12 / inputEntity.esppInputEntity.holdingPeriodMonths);
   }
 
   calculateTaxOnDividend(inputEntity: InputEntity, derivedValues: DerivedValues) : number {
-    return 0;
+    return derivedValues.dividendAmount * inputEntity.personalInputEntity.marginalTaxBracket/100;
   }
 }
 
