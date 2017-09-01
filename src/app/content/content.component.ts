@@ -9,20 +9,12 @@ import {DerivedValues} from "../derived-value.service";
 })
 export class ContentComponent implements OnInit {
 
-  _inputEntity: InputEntity;
+  @Input() inputEntity: InputEntity;
   @Input() derivedValues: DerivedValues;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  @Input() set inputEntity(inputEntity: InputEntity) {
-    this._inputEntity = inputEntity;
-  }
-
-  get inputEntity(): InputEntity {
-    return this._inputEntity;
   }
 }
 
