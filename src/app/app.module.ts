@@ -5,8 +5,6 @@ import { FormsModule } from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {MdButtonModule, MdInputModule, MdCardModule, MdSidenavModule} from '@angular/material';
-
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
@@ -29,10 +27,6 @@ import {DerivedValueService} from "./derived-value.service";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdInputModule,
-    MdCardModule,
-    MdButtonModule,
-    MdSidenavModule,
     FormsModule,
     HttpClientModule
   ],
