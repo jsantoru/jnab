@@ -27,17 +27,20 @@
   <img class="card-img-top" src="assets/images/personal-salary2.jpg" alt="Card image cap" style="width:20rem;height:13rem;">
   <div class="card-body">
     <p class="card-text">Enter Personal Info</p>
+    <label><b>Salary</b></label>
     <div class="input-group">
       <span class="input-group-addon">$</span>
-      <input mdInput placeholder="Salary" value="${{personalInputEntity.salary}}">
+      <input mdInput placeholder="Salary" value="{{personalInputEntity.salary}}">
     </div>
+    <label><b>Contribution %</b></label>
     <div class="input-group">
       <span class="input-group-addon">%</span>
-      <input mdInput placeholder="Contribution %" value="{{personalInputEntity.contributionPercent}}%">
+      <input mdInput placeholder="Contribution %" value="{{personalInputEntity.contributionPercent}}">
     </div>
+    <label><b>Marginal Tax Bracket</b></label>
     <div class="input-group">
       <span class="input-group-addon">%</span>
-      <input mdInput placeholder="Marginal Tax Bracket" value="{{personalInputEntity.marginalTaxBracket}}%">
+      <input mdInput placeholder="Marginal Tax Bracket" value="{{personalInputEntity.marginalTaxBracket}}">
     </div>
   </div>
 </div>

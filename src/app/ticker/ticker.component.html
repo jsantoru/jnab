@@ -2,14 +2,17 @@
   <img class="card-img-top" src="assets/images/company-info.png" alt="Card image cap" style="width:20rem;height:13rem;">
   <div class="card-body">
     <p class="card-text">Enter Company Name or Ticker</p>
+    <label><b>Company Ticker</b></label>
     <div class="input-group">
       <span class="input-group-addon">_</span>
       <input mdInput [(ngModel)]="companyInputEntity.ticker" placeholder="Ticker" value="XYZ" (focusout)="lookupCompanyInfo()">
     </div>
+    <label><b>Stock Price</b></label>
     <div class="input-group">
       <span class="input-group-addon">$</span>
       <input mdInput readonly placeholder="Value" value="{{companyInputEntity.value}}">
     </div>
+    <label><b>Annual Dividend Yield</b></label>
     <div class="input-group">
       <span class="input-group-addon">%</span>
       <input mdInput readonly placeholder="Dividend" value="{{companyInputEntity.dividend}}">

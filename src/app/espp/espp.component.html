@@ -29,14 +29,17 @@
   <img class="card-img-top" src="assets/images/espp.jpg" alt="Card image cap" style="width:20rem;height:13rem;">
   <div class="card-body">
     <p class="card-text">Enter ESPP info</p>
+    <label><b>Discount</b></label>
     <div class="input-group">
       <span class="input-group-addon">%</span>
       <input mdInput placeholder="Discount" value="{{esppInputEntity?.discount}}">
     </div>
+    <label><b>Holding Period (Months)</b></label>
     <div class="input-group">
-      <span class="input-group-addon">Months</span>
+      <span class="input-group-addon">Mon</span>
       <input mdInput placeholder="Holding Period (months)" value="{{esppInputEntity?.holdingPeriodMonths}}">
     </div>
+    <label><b>Fees</b></label>
     <div class="input-group">
       <span class="input-group-addon">$</span>
       <input mdInput placeholder="Fees" value="{{esppInputEntity?.fees}}">
