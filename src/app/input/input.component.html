@@ -21,13 +21,22 @@
 
 </md-sidenav-container>
 -->
-<app-ticker
-  (lookupPriceEvent)="onLookupStockPriceEvent($event)"
-  (lookupDividendEvent)="onLookupDividendEvent($event)">
-</app-ticker>
-<app-espp
-  (esppInputEvent)="onEsppInputEvent($event)">
-</app-espp>
-<app-personal
-  (personalInputEvent)="onPersonalInputEvent($event)">
-</app-personal>
+
+<div class="row row-list">
+  <div class="col-md-3">
+    <app-ticker
+      (lookupPriceEvent)="onLookupStockPriceEvent($event)"
+      (lookupDividendEvent)="onLookupDividendEvent($event)">
+    </app-ticker>
+  </div>
+  <div class="col-md-3">
+    <app-espp
+      (esppInputEvent)="onEsppInputEvent($event)">
+    </app-espp>
+  </div>
+  <div class="col-md-3">
+    <app-personal
+      (personalInputEvent)="onPersonalInputEvent($event)">
+    </app-personal>
+  </div>
+</div>

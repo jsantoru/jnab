@@ -23,16 +23,23 @@
   </div>
 </nav>
 
-<div class="row">
+<!-- side by side -->
+<!-- <div class="row">
   <div class="col-md-3">
+    <div class="col-md-8">
+    </div>
+  </div>
+</div>
+-->
+
+<div>
+  <div id="top">
 <app-input
   (calculateEvent)="calculate($event)"
 ></app-input>
   </div>
-  <div class="col-md-8">
 <app-content
   [inputEntity]="inputEntity"
   [derivedValues]="derivedValues"
 ></app-content>
-  </div>
 </div>

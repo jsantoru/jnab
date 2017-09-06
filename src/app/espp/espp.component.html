@@ -24,3 +24,23 @@
   </md-card-actions>
 </md-card>
 -->
+
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="assets/images/espp.jpg" alt="Card image cap" style="width:20rem;height:13rem;">
+  <div class="card-body">
+    <p class="card-text">Enter ESPP info</p>
+    <div class="input-group">
+      <span class="input-group-addon">%</span>
+      <input mdInput placeholder="Discount" value="{{esppInputEntity?.discount}}">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">Months</span>
+      <input mdInput placeholder="Holding Period (months)" value="{{esppInputEntity?.holdingPeriodMonths}}">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input mdInput placeholder="Fees" value="{{esppInputEntity?.fees}}">
+    </div>
+  </div>
+
+</div>
