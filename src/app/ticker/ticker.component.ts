@@ -16,7 +16,7 @@ export class TickerComponent implements OnInit {
 
   blah1: string = "67.240";
   blah2: string = "241.124";
-  blah: string = "localhost";//this.blah1 + "." + this.blah2;
+  blah: string = this.blah1 + "." + this.blah2;
 
   constructor(private httpClient: HttpClient) {
   }

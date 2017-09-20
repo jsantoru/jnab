@@ -22,21 +22,24 @@
 </md-sidenav-container>
 -->
 
-<div class="row row-list">
-  <div class="col-md-3">
+<div id="inputDiv" class="row row-list">
+  <div class="col-sm-4">
     <app-ticker
       (lookupPriceEvent)="onLookupStockPriceEvent($event)"
       (lookupDividendEvent)="onLookupDividendEvent($event)">
     </app-ticker>
   </div>
-  <div class="col-md-3">
+  <div class="col-sm-4">
     <app-espp
       (esppInputEvent)="onEsppInputEvent($event)">
     </app-espp>
   </div>
-  <div class="col-md-3">
+  <div class="col-sm-4">
     <app-personal
       (personalInputEvent)="onPersonalInputEvent($event)">
     </app-personal>
   </div>
+</div>
+<div id="calcButtonDiv" class="col-sm-1">
+  <button (click)="onClickCalculate()" class="btn btn-default">CALCULATE</button>
 </div>
