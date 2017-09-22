@@ -20,7 +20,8 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0 mr-auto">
-      <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Search for company" aria-label="Search for company">
+      <input id="searchInput" class="form-control mr-sm-2" type="text" placeholder="Search for company"
+             aria-label="Search for company">
       <!-- TODO: glyphicons aren't rendering -->
       <span class="glyphicon glyphicon-search form-control-feedback"></span>
     </form>
@@ -42,9 +43,11 @@
       (calculateEvent)="calculate($event)"
     ></app-input>
   </div>
-  <app-content
-    [inputEntity]="inputEntity"
-    [derivedValues]="derivedValues"
-    [tableData]="tableData"
-  ></app-content>
+  <div *ngIf="tableData != null">
+    <app-content
+      [inputEntity]="inputEntity"
+      [derivedValues]="derivedValues"
+      [tableData]="tableData"
+    ></app-content>
+  </div>
 </div>
