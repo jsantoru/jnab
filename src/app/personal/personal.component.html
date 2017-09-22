@@ -30,17 +30,17 @@
     <label><b>Salary</b></label>
     <div class="input-group">
       <span class="input-group-addon">$</span>
-      <input mdInput placeholder="Salary" value="{{personalInputEntity.salary}}">
+      <input mdInput [(ngModel)]="personalInputEntity.salary" placeholder="Salary">
     </div>
     <label><b>Contribution %</b></label>
     <div class="input-group">
       <span class="input-group-addon">%</span>
-      <input mdInput placeholder="Contribution %" value="{{personalInputEntity.contributionPercent}}">
+      <input mdInput [(ngModel)]="personalInputEntity.contributionPercent" placeholder="Contribution %">
     </div>
     <label><b>Marginal Tax Bracket</b></label>
     <div class="input-group">
       <span class="input-group-addon">%</span>
-      <input mdInput placeholder="Marginal Tax Bracket" value="{{personalInputEntity.marginalTaxBracket}}">
+      <input mdInput [(ngModel)]="personalInputEntity.marginalTaxBracket" placeholder="Marginal Tax Bracket">
     </div>
   </div>
 </div>

@@ -32,17 +32,17 @@
     <label><b>Discount</b></label>
     <div class="input-group">
       <span class="input-group-addon">%</span>
-      <input mdInput placeholder="Discount" value="{{esppInputEntity?.discount}}">
+      <input mdInput [(ngModel)]="esppInputEntity.discount" placeholder="Discount">
     </div>
     <label><b>Holding Period (Months)</b></label>
     <div class="input-group">
       <span class="input-group-addon">_</span>
-      <input mdInput placeholder="Holding Period (months)" value="{{esppInputEntity?.holdingPeriodMonths}}">
+      <input mdInput [(ngModel)]="esppInputEntity.holdingPeriodMonths" placeholder="Holding Period (months)">
     </div>
     <label><b>Fees</b></label>
     <div class="input-group">
       <span class="input-group-addon">$</span>
-      <input mdInput placeholder="Fees" value="{{esppInputEntity?.fees}}">
+      <input mdInput [(ngModel)]="esppInputEntity.fees" placeholder="Fees">
     </div>
   </div>
 

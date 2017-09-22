@@ -22,6 +22,9 @@ export class PersonalComponent implements OnInit {
     this.personalInputEvent.emit(this.personalInputEntity);
   }
 
+  ngDoCheck() {
+    this.personalInputEvent.emit(this.personalInputEntity);
+  }
 }
 
 export class PersonalInputEntity {
