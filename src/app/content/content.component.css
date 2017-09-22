@@ -1,5 +1,5 @@
 #content {
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
 
   text-align: left;
@@ -15,4 +15,8 @@
 
 .subtract {
   color: red;
+}
+
+.profitLabel {
+  text-align: center;
 }
