@@ -2,38 +2,59 @@
   <table class="table table-hover">
     <thead>
     <tr>
-      <th>Row</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
+      <th>event</th>
+      <th>amount</th>
+      <th>running total</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>1</td>
-      <td>John</td>
-      <td>Carter</td>
-      <td>johncarter@mail.com</td>
+      <td>purchase</td>
+      <td>{{tableData?.purchase | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.purchaseRunningTotal | currency:'USD':true:'1.2-2'}}</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>Peter</td>
-      <td>Parker</td>
-      <td>peterparker@mail.com</td>
+      <td>sell</td>
+      <td>{{tableData?.sell | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.sellRunningTotal | currency:'USD':true:'1.2-2'}}</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>John</td>
-      <td>Rambo</td>
-      <td>johnrambo@mail.com</td>
+      <td>dividend</td>
+      <td>{{tableData?.dividend | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.dividendRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>taxes on espp discount</td>
+      <td>{{tableData?.taxesOnEsppDiscount| currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.taxesOnEsppDiscountRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>taxes on earnings</td>
+      <td>{{tableData?.taxesOnEarnings | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.taxesOnEarningsRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>taxes on dividend</td>
+      <td>{{tableData?.taxesOnDividend | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.taxesOnDividendRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>fees</td>
+      <td>{{tableData?.fees | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.feesRunningTotal | currency:'USD':true:'1.2-2'}}</td>
     </tr>
     </tbody>
   </table>
 
+  <!--
   <h2>CONTENT COMPONENT</h2>
   <h3>Input:</h3>
   <pre>{{inputEntity | json}}</pre>
 
   <h3>Derived Values</h3>
   <pre>{{derivedValues | json}}</pre>
+
+  <h3>TableData</h3>
+  <pre>{{tableData | json}}</pre>
+  -->
 </div>
