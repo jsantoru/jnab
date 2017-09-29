@@ -24,9 +24,14 @@ export class SearchService {
 
   constructor(private httpClient: HttpClient) {}
 
+  /**
+   * Execute a company search by making an http call to the jnab-backend.
+   * @param companySearchValue
+   * @returns Observable<CompanySearchResult[]>
+   */
   executeCompanySearch(companySearchValue) : Observable<CompanySearchResult[]> {
     console.log("company search value:", companySearchValue);
-    var url: string = 'http://' + this.blah + ':6001/api/stock/query?query=' + companySearchValue + "&apikey=demo";
+    let url: string = 'http://' + this.blah + ':6001/api/stock/query?query=' + companySearchValue + "&apikey=demo";
 
     // only execute the search if we have a search term
     if (companySearchValue && companySearchValue.length > 2) {
@@ -44,8 +49,8 @@ export class SearchService {
       );
     }
 
-    let emptyArray : CompanySearchResult[] = [];
-    return Observable.of(emptyArray);
+    let noResults : CompanySearchResult[] = [];
+    return Observable.of(noResults);
   }
 }
 
@@ -68,13 +73,17 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Execute a search that's connected to a typeahead input in the UI.
+   * @param text$
+   * @returns {Observable<string[]>}
+   */
   search(text$: Observable<string>): Observable<string[]> {
     return text$
       // wait 200 ms before getting different values
       .debounceTime(200)
       // only emit when the current value is different than the last
       .distinctUntilChanged()
-      .do(() => console.log("searching"))
       // process the search term and execute the search
       // and switch to the company search response observable
       .switchMap(term =>
@@ -86,7 +95,7 @@ export class NavComponent implements OnInit {
         let companyNames: string[] = [];
 
         searchResults.forEach(companySearchResult => {
-          companyNames.push(this.buildCompanySearchResultString(companySearchResult));
+            companyNames.push(this.buildCompanySearchResultString(companySearchResult));
         });
 
         // return the first 10 company names
