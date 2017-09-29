@@ -13,13 +13,12 @@
              type="text"
              placeholder="&#xF002;  Search for company"
              aria-label="Search for company"
-             name="model"
-             [(ngModel)]="model"
+             name="companyNameInput"
+             [(ngModel)]="companyName"
              [ngbTypeahead]="search"
       >
-      <pre>Model: {{ model | json }}</pre>
-      <!-- TODO: glyphicons aren't rendering -->
-      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+      <!-- <pre>{{ companyName }}</pre> -->
+
     </form>
 
     <ul class="navbar-nav">
