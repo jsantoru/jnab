@@ -62,7 +62,41 @@ export class SearchService {
 export class NavComponent implements OnInit {
   title = 'ESPP Calculator';
 
-  companyName: any;
+  _companyName: string;
+
+  get companyName() : string {
+    return this._companyName;
+  }
+
+  set companyName(companyName : string) {
+    this._companyName = companyName;
+
+    // if we have an open parenthesis, assume the ticker is in parens (for now) TODO: use regex
+    if(companyName && companyName.indexOf("(") > 0) {
+      console.log("GOT A COMPANY:", companyName);
+
+      // TODO: fire an event and set the company ticker value
+      let ticker : string = this.parseTicker(companyName);
+      console.log("TICKER:", ticker);
+    }
+  }
+
+  /**
+   * Parse the ticker from a company name.
+   *
+   * Thomson Reuters (TRI)
+   *
+   * @param companyName
+   * @returns {string}
+   */
+  parseTicker(companyName: string) {
+    if(companyName) {
+      let tickerIndex: number = companyName.search(new RegExp('\\(.*\\)$'));
+      if(tickerIndex > -1) {
+        return companyName.substring(tickerIndex).replace("(","").replace(")","");
+      }
+    }
+  }
 
   constructor(private searchService: SearchService) {
     // this is to avoid searchService being unavailable in the observable below
