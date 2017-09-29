@@ -7,6 +7,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {HttpClientModule} from '@angular/common/http';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
+
 import {AppComponent} from './app.component';
 import {TickerComponent} from './ticker/ticker.component';
 import { EsppComponent } from './espp/espp.component';
@@ -30,7 +33,9 @@ import { NavComponent } from './nav/nav.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot(),
+    NgbTypeaheadModule
   ],
   providers: [DerivedValueService],
   bootstrap: [AppComponent]
