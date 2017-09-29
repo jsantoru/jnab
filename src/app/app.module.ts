@@ -14,6 +14,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { InputComponent } from './input/input.component';
 import { ContentComponent } from './content/content.component';
 import {DerivedValueService} from "./derived-value.service";
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {DerivedValueService} from "./derived-value.service";
     EsppComponent,
     PersonalComponent,
     InputComponent,
-    ContentComponent
+    ContentComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+#searchInput {
+  width:100%;
+}
+
+form {
+  width:75%;
+  text-align:center;
+  margin:auto;
+}
+
+input {
+  font-family:FontAwesome,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
