@@ -17,7 +17,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { InputComponent } from './input/input.component';
 import { ContentComponent } from './content/content.component';
 import {DerivedValueService} from "./derived-value.service";
-import { NavComponent } from './nav/nav.component';
+import {NavComponent, SearchService} from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { NavComponent } from './nav/nav.component';
     NgbModule.forRoot(),
     NgbTypeaheadModule
   ],
-  providers: [DerivedValueService],
+  providers: [DerivedValueService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
