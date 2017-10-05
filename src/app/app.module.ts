@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {MdButtonModule, MdInputModule, MdCardModule, MdSidenavModule} from '@angular/material';
-
 import {HttpClientModule} from '@angular/common/http';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbTypeaheadModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
 import {TickerComponent} from './ticker/ticker.component';
@@ -16,6 +17,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { InputComponent } from './input/input.component';
 import { ContentComponent } from './content/content.component';
 import {DerivedValueService} from "./derived-value.service";
+import {NavComponent, SearchService} from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -24,19 +26,18 @@ import {DerivedValueService} from "./derived-value.service";
     EsppComponent,
     PersonalComponent,
     InputComponent,
-    ContentComponent
+    ContentComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdInputModule,
-    MdCardModule,
-    MdButtonModule,
-    MdSidenavModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot(),
+    NgbTypeaheadModule
   ],
-  providers: [DerivedValueService],
+  providers: [DerivedValueService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

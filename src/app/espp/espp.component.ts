@@ -1,10 +1,9 @@
-import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy, OnChanges, Input} from '@angular/core';
 
 @Component({
   selector: 'app-espp',
   templateUrl: './espp.component.html',
-  styleUrls: ['./espp.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./espp.component.css']
 })
 export class EsppComponent implements OnInit {
 
@@ -24,6 +23,10 @@ export class EsppComponent implements OnInit {
     this.esppInputEvent.emit(this.esppInputEntity);
   }
 
+  ngDoCheck() {
+    // send out what the current espp values are
+    this.esppInputEvent.emit(this.esppInputEntity);
+  }
 }
 
 export class EsppInputEntity {

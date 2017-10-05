@@ -1,5 +1,5 @@
 #content {
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
 
   text-align: left;
@@ -7,4 +7,16 @@
   border-style: solid;
   border-width: 1px 0px 0px 0px;
   border-color:lightgray;
+}
+
+.add {
+  color: green;
+}
+
+.subtract {
+  color: red;
+}
+
+.profitLabel {
+  text-align: center;
 }

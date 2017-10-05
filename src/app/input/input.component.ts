@@ -13,6 +13,18 @@ export class InputComponent implements OnInit {
 
   @Output() calculateEvent = new EventEmitter<InputEntity>();
 
+  _selectedTicker : string;
+
+  @Input()
+  set selectedTicker(ticker: string) {
+    console.log("InputComponent:", ticker);
+    this._selectedTicker = ticker;
+  }
+
+  get selectedTicker() {
+    return this._selectedTicker;
+  }
+
   inputEntity: InputEntity = new InputEntity();
 
   constructor() { }

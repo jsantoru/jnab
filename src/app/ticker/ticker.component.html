@@ -1,23 +1,21 @@
-<md-card id="company-info-card" class="input-card">
-  <md-card-header>
-    <div md-card-avatar class="example-header-image"><i class="material-icons">work</i></div>
-    <md-card-title>Company Info</md-card-title>
-    <!--<md-card-subtitle>Dog Breed</md-card-subtitle>-->
-  </md-card-header>
-  <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
-  <md-card-content>
-    <md-input-container>
-      <input mdInput [(ngModel)]="companyInputEntity.ticker" placeholder="Ticker" value="" (focusout)="lookupCompanyInfo()">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput readonly placeholder="Value" value="${{companyInputEntity.value}}">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput placeholder="Dividend" value="{{companyInputEntity.dividend}}%">
-    </md-input-container>
-  </md-card-content>
-  <!--<md-card-actions>
-    <button md-button>LIKE</button>
-    <button md-button>SHARE</button>
-  </md-card-actions>-->
-</md-card>
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="assets/images/company-info.png" alt="Card image cap" style="width:20rem;height:13rem;">
+  <div class="card-body">
+    <p class="card-text">Enter Company Name or Ticker</p>
+    <label><b>Company Ticker</b></label>
+    <div class="input-group">
+      <span class="input-group-addon">_</span>
+      <input mdInput [(ngModel)]="companyInputEntity.ticker" placeholder="Ticker" value="XYZ" (focusout)="lookupCompanyInfo()">
+    </div>
+    <label><b>Stock Price</b></label>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input mdInput readonly placeholder="Value" value="{{companyInputEntity.value}}">
+    </div>
+    <label><b>Annual Dividend Yield</b></label>
+    <div class="input-group">
+      <span class="input-group-addon">%</span>
+      <input mdInput readonly placeholder="Dividend" value="{{companyInputEntity.dividend}}">
+    </div>
+  </div>
+</div>

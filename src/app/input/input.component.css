@@ -1,9 +1,19 @@
-md-sidenav-container {
-  width: 200px;
+#inputDiv {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+}
 
-  border-style: solid;
-  border-width: 0px 1px 0px 0px;
-  border-color:lightgray;
+#calcButtonDiv {
+  margin: auto;
+  padding: 10px;
+}
 
-  padding-right:-10px;
+.section {
+  margin: auto;
+  width:100%;
+}
+
+#collapseInputDiv {
+  padding: 10px;
 }

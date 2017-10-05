@@ -1,8 +1,68 @@
 <div id="content">
+
+  <h1 class="profitLabel">Potential Profit <span class="badge badge-success">{{tableData?.feesRunningTotal | currency:'USD':true:'1.2-2'}}</span></h1>
+  <br/>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>event</th>
+      <th>amount</th>
+      <th>running total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>purchase</td>
+      <td class="subtract">{{tableData?.purchase | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.purchaseRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>sell</td>
+      <td class="add">{{tableData?.sell | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.sellRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>dividend</td>
+      <td class="add">{{tableData?.dividend | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.dividendRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>taxes on espp discount</td>
+      <td class="subtract">{{tableData?.taxesOnEsppDiscount| currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.taxesOnEsppDiscountRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>taxes on earnings</td>
+      <td class="subtract">{{tableData?.taxesOnEarnings | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.taxesOnEarningsRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>taxes on dividend</td>
+      <td class="subtract">{{tableData?.taxesOnDividend | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.taxesOnDividendRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td>fees</td>
+      <td class="subtract">{{tableData?.fees | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{tableData?.feesRunningTotal | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td><b>potential profit</b></td>
+      <td></td>
+      <td><b>{{tableData?.feesRunningTotal | currency:'USD':true:'1.2-2'}}</b></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--
   <h2>CONTENT COMPONENT</h2>
   <h3>Input:</h3>
   <pre>{{inputEntity | json}}</pre>
 
   <h3>Derived Values</h3>
   <pre>{{derivedValues | json}}</pre>
+
+  <h3>TableData</h3>
+  <pre>{{tableData | json}}</pre>
+  -->
 </div>

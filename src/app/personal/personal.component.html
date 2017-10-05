@@ -1,10 +1,10 @@
-<md-card id="personal-info-card" class="input-card">
+<!--<md-card id="personal-info-card" class="input-card">
   <md-card-header>
     <div md-card-avatar class="example-header-image"><i class="material-icons">person</i></div>
     <md-card-title>Personal Info</md-card-title>
-    <!--<md-card-subtitle>Dog Breed</md-card-subtitle>-->
+    <!--<md-card-subtitle>Dog Breed</md-card-subtitle>
   </md-card-header>
-  <!--<img md-card-image src="assets/img/examples/shiba2.jpg">-->
+  <!--<img md-card-image src="assets/img/examples/shiba2.jpg">
   <md-card-content>
     <md-input-container>
       <input mdInput placeholder="Salary" value="${{personalInputEntity.salary}}">
@@ -16,8 +16,31 @@
       <input mdInput placeholder="Marginal Tax Bracket" value="{{personalInputEntity.marginalTaxBracket}}%">
     </md-input-container>
   </md-card-content>
-  <!--<md-card-actions>
+  <md-card-actions>
     <button md-button>LIKE</button>
     <button md-button>SHARE</button>
-  </md-card-actions>-->
+  </md-card-actions>
 </md-card>
+-->
+
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="assets/images/personal-salary2.jpg" alt="Card image cap" style="width:20rem;height:13rem;">
+  <div class="card-body">
+    <p class="card-text">Enter Personal Info</p>
+    <label><b>Salary</b></label>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input mdInput [(ngModel)]="personalInputEntity.salary" placeholder="Salary">
+    </div>
+    <label><b>Contribution %</b></label>
+    <div class="input-group">
+      <span class="input-group-addon">%</span>
+      <input mdInput [(ngModel)]="personalInputEntity.contributionPercent" placeholder="Contribution %">
+    </div>
+    <label><b>Marginal Tax Bracket</b></label>
+    <div class="input-group">
+      <span class="input-group-addon">%</span>
+      <input mdInput [(ngModel)]="personalInputEntity.marginalTaxBracket" placeholder="Marginal Tax Bracket">
+    </div>
+  </div>
+</div>

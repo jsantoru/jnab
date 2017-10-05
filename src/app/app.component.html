@@ -1,13 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{title}}
-  </h1>
+<app-nav
+  (companySelectedEvent)="updateTicker($event)"
+></app-nav>
+
+<!-- side by side -->
+<!-- <div class="row">
+  <div class="col-md-3">
+    <div class="col-md-8">
+    </div>
+  </div>
 </div>
-<app-input
-  (calculateEvent)="calculate($event)"
-></app-input>
-<app-content
-  [inputEntity]="inputEntity"
-  [derivedValues]="derivedValues"
-></app-content>
+-->
+
+<div>
+  <div id="top">
+    <app-input
+      [selectedTicker]="selectedTicker"
+      (calculateEvent)="calculate($event)"
+    ></app-input>
+  </div>
+  <div *ngIf="tableData != null">
+    <app-content
+      [inputEntity]="inputEntity"
+      [derivedValues]="derivedValues"
+      [tableData]="tableData"
+    ></app-content>
+  </div>
+</div>

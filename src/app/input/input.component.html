@@ -1,4 +1,4 @@
-<md-sidenav-container class="example-container" fullscreen>
+<!--<md-sidenav-container class="example-container" fullscreen>
   <md-sidenav #sidenav class="example-sidenav" opened="true">
     <app-ticker
       (lookupPriceEvent)="onLookupStockPriceEvent($event)"
@@ -20,3 +20,30 @@
   </div>
 
 </md-sidenav-container>
+-->
+<div id="outerOuterInputDiv">
+  <div id="outerInputDiv" class="collapse show">
+    <div id="inputDiv" class="row row-list">
+      <div class="col-lg-4">
+        <app-ticker
+          [companyTicker]="selectedTicker"
+          (lookupPriceEvent)="onLookupStockPriceEvent($event)"
+          (lookupDividendEvent)="onLookupDividendEvent($event)">
+        </app-ticker>
+      </div>
+      <div class="col-lg-4">
+        <app-espp
+          (esppInputEvent)="onEsppInputEvent($event)">
+        </app-espp>
+      </div>
+      <div class="col-lg-4" style="text-align: center;">
+        <app-personal
+          (personalInputEvent)="onPersonalInputEvent($event)">
+        </app-personal>
+        <div id="calcButtonDiv">
+          <button (click)="onClickCalculate()" class="btn btn-default">Calculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

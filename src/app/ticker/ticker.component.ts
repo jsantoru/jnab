@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -24,6 +24,14 @@ export class TickerComponent implements OnInit {
   ngOnInit() {
   }
 
+  @Input()
+  set companyTicker(ticker: string) {
+    console.log("TickerComponent:", ticker);
+
+    this.companyInputEntity.ticker = ticker;
+    this.lookupCompanyInfo();
+  }
+
   lookupCompanyInfo() {
     this.lookupPrice();
     this.lookupDividend();
@@ -32,7 +40,9 @@ export class TickerComponent implements OnInit {
   lookupPrice() {
     console.log("looking up ticker:", this.companyInputEntity.ticker);
 
-    var url: string = 'http://' + this.blah + ':6001/stock/price?ticker=' + this.companyInputEntity.ticker + "&apikey=demo";
+    let tickerUpper = (this.companyInputEntity.ticker) ? this.companyInputEntity.ticker.toUpperCase() : this.companyInputEntity.ticker;
+
+    let url: string = 'http://' + this.blah + ':6001/api/stock/price?ticker=' + tickerUpper + "&apikey=demo";
 
     console.log(url);
     // get the current value of the ticker
@@ -57,7 +67,9 @@ export class TickerComponent implements OnInit {
   lookupDividend() {
     console.log("looking up dividend:", this.companyInputEntity.ticker);
 
-    var url: string = 'http://' + this.blah + ':6001/stock/dividend?ticker=' + this.companyInputEntity.ticker + "&apikey=demo";
+    let tickerUpper = (this.companyInputEntity.ticker) ? this.companyInputEntity.ticker.toUpperCase() : this.companyInputEntity.ticker;
+
+    let url: string = 'http://' + this.blah + ':6001/api/stock/dividend?ticker=' + tickerUpper + "&apikey=demo";
 
     // get the current value of the ticker
     this.httpClient.get(url).subscribe(

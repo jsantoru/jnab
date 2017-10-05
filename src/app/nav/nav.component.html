@@ -1,0 +1,30 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0 mr-auto">
+      <!-- https://ng-bootstrap.github.io/#/components/typeahead/examples -->
+      <input #searchInput
+             id="searchInput"
+             class="form-control mr-sm-2"
+             type="text"
+             placeholder="&#xF002;  Search for company"
+             aria-label="Search for company"
+             name="companyNameInput"
+             [(ngModel)]="companyName"
+             [ngbTypeahead]="search"
+      >
+    </form>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
+           data-target="#outerInputDiv">Show/Hide Input</a>
+      </li>
+    </ul>
+  </div>
+</nav>
