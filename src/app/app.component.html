@@ -1,4 +1,6 @@
-<app-nav></app-nav>
+<app-nav
+  (companySelectedEvent)="updateTicker($event)"
+></app-nav>
 
 <!-- side by side -->
 <!-- <div class="row">
@@ -12,6 +14,7 @@
 <div>
   <div id="top">
     <app-input
+      [selectedTicker]="selectedTicker"
       (calculateEvent)="calculate($event)"
     ></app-input>
   </div>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -22,6 +22,14 @@ export class TickerComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  @Input()
+  set companyTicker(ticker: string) {
+    console.log("TickerComponent:", ticker);
+
+    this.companyInputEntity.ticker = ticker;
+    this.lookupCompanyInfo();
   }
 
   lookupCompanyInfo() {

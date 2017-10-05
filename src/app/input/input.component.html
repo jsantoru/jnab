@@ -26,6 +26,7 @@
     <div id="inputDiv" class="row row-list">
       <div class="col-lg-4">
         <app-ticker
+          [companyTicker]="selectedTicker"
           (lookupPriceEvent)="onLookupStockPriceEvent($event)"
           (lookupDividendEvent)="onLookupDividendEvent($event)">
         </app-ticker>

@@ -1,4 +1,4 @@
-import {Component, OnInit, Injectable} from '@angular/core';
+import {Component, OnInit, Injectable, Output, EventEmitter} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -62,6 +62,8 @@ export class SearchService {
 export class NavComponent implements OnInit {
   title = 'ESPP Calculator';
 
+  @Output() companySelectedEvent = new EventEmitter<string>();
+
   _companyName: string;
 
   get companyName() : string {
@@ -78,6 +80,8 @@ export class NavComponent implements OnInit {
       // TODO: fire an event and set the company ticker value
       let ticker : string = this.parseTicker(companyName);
       console.log("TICKER:", ticker);
+
+      this.companySelectedEvent.emit(ticker);
     }
   }
 

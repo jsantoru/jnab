@@ -10,6 +10,8 @@ import {DerivedValueService, DerivedValues} from "./derived-value.service";
 export class AppComponent {
   title = 'ESPP Calculator';
 
+  selectedTicker: string;
+
   inputEntity: InputEntity;
 
   derivedValues: DerivedValues;
@@ -17,6 +19,11 @@ export class AppComponent {
   tableData: TableData;
 
   constructor(private derivedValueService : DerivedValueService) {}
+
+  updateTicker(ticker: string) {
+    console.log("TICKER", ticker);
+    this.selectedTicker = ticker;
+  }
 
   calculate(inputEntity) {
     console.log("INPUT ENTITY:", JSON.stringify(inputEntity));
