@@ -35,11 +35,15 @@ export class InputComponent implements OnInit {
   onLookupStockPriceEvent(stockPrice) {
     console.log("STOCK PRICE:", stockPrice);
     this.inputEntity.companyInputEntity.value = stockPrice;
+
+    this.onClickCalculate();
   }
 
   onLookupDividendEvent(dividend) {
     console.log("DIVIDEND:", dividend);
     this.inputEntity.companyInputEntity.dividend = dividend;
+
+    this.onClickCalculate();
   }
 
   onClickCalculate() {
@@ -50,11 +54,15 @@ export class InputComponent implements OnInit {
   onEsppInputEvent(esppInputEntity) {
     this.inputEntity.esppInputEntity = esppInputEntity;
     console.log("On espp input event", esppInputEntity);
+
+    this.onClickCalculate();
   }
 
   onPersonalInputEvent(personalInputEntity) {
     this.inputEntity.personalInputEntity = personalInputEntity;
     console.log("on personal input event", personalInputEntity);
+
+    this.onClickCalculate();
   }
 }
 

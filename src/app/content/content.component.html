@@ -1,5 +1,5 @@
+<div *ngIf="tableData?.purchase">
 <div id="content">
-
   <h1 class="profitLabel">Potential Profit <span class="badge badge-success">{{tableData?.feesRunningTotal | currency:'USD':true:'1.2-2'}}</span></h1>
   <br/>
   <table class="table table-hover">
@@ -65,4 +65,5 @@
   <h3>TableData</h3>
   <pre>{{tableData | json}}</pre>
   -->
+</div>
 </div>
