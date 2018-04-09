@@ -16,7 +16,7 @@ export class TickerComponent implements OnInit {
 
   blah1: string = "67.240";
   blah2: string = "241.124";
-  blah: string = this.blah1 + "." + this.blah2;
+  blah: string = "localhost"; //this.blah1 + "." + this.blah2;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -42,7 +42,7 @@ export class TickerComponent implements OnInit {
 
     let tickerUpper = (this.companyInputEntity.ticker) ? this.companyInputEntity.ticker.toUpperCase() : this.companyInputEntity.ticker;
 
-    let url: string = 'http://' + this.blah + ':6001/api/stock/price?ticker=' + tickerUpper + "&apikey=demo";
+    let url: string = '/api/espp-calc/stock/price?ticker=' + tickerUpper + "&apikey=demo";
 
     console.log(url);
     // get the current value of the ticker
@@ -69,7 +69,7 @@ export class TickerComponent implements OnInit {
 
     let tickerUpper = (this.companyInputEntity.ticker) ? this.companyInputEntity.ticker.toUpperCase() : this.companyInputEntity.ticker;
 
-    let url: string = 'http://' + this.blah + ':6001/api/stock/dividend?ticker=' + tickerUpper + "&apikey=demo";
+    let url: string = '/api/espp-calc/stock/dividend?ticker=' + tickerUpper + "&apikey=demo";
 
     // get the current value of the ticker
     this.httpClient.get(url).subscribe(

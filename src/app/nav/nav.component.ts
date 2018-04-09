@@ -18,9 +18,6 @@ export class CompanySearchResult {
 
 @Injectable()
 export class SearchService {
-  blah1: string = "67.240";
-  blah2: string = "241.124";
-  blah: string = this.blah1 + "." + this.blah2;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -31,7 +28,7 @@ export class SearchService {
    */
   executeCompanySearch(companySearchValue) : Observable<CompanySearchResult[]> {
     console.log("company search value:", companySearchValue);
-    let url: string = 'http://' + this.blah + ':6001/api/stock/query?query=' + companySearchValue + "&apikey=demo";
+    let url: string = '/api/espp-calc/stock/query?query=' + companySearchValue + "&apikey=demo";
 
     // only execute the search if we have a search term
     if (companySearchValue && companySearchValue.length > 2) {
